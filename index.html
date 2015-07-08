@@ -8,18 +8,18 @@
         border: none;
         border-bottom: solid 4px #c9c9c9;
         transition: border 0.3s;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
       }
       
       h1 {
-        text-align: center;
         font: 30px impact, sans-serif;
       }
       
+      p.instruct {
+        font: 25px optima, sans-serif;
+        font-style: italic;
+      }
+      
       p {
-        text-align: center;
         font: 15px trebuchet ms, sans-serif;
       }
       
@@ -31,14 +31,11 @@
         font: 15px trebuchet ms, sans-serif;
         background-color: #D6D6D6;
         color: #2E2E2E;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
         border-radius: 5px;
       }
       
       .subButton:hover {
-        color: #AEAEAE;
+        background-color: #AEAEAE;
       }
 
     </style>
@@ -59,6 +56,7 @@
   <body>
     <!--HTML body goes here-->
     <h1>3Weather settings</h1>
+    <p class="instruct">To add further accuracy, add ",[xx]" where [xx] equals the country code.</p>
     <p>Enter first location (up click):</p>
     <input type="text" id="loc1" value="New York" onfocus="if(this.value != 'New York' || '' || ' ') { this.value = ''; }">
     <p>Enter second location (middle click):</p>
