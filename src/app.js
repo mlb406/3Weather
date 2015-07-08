@@ -1,10 +1,27 @@
-// Finalise location
-
-// a bit broken! (location)
-
 var UI = require('ui');
 var ajax = require('ajax');
 var Vector2 = require('vector2');
+var Settings = require('settings');
+
+Settings.config(
+  { url: 'http://mlb406.github.io/3Weather/' },
+  function(e) {
+    //Open config
+    console.log("Configurable opened!");
+  },
+  function(e) {
+    console.log("Settings recieved!");
+    console.log(JSON.stringify(e.options));
+    var options = e.options;
+    var location1 = options.location1;
+    var location2 = options.location2;
+    var location3 = options.location3;
+    localStorage.setItem(1, location1);
+    localStorage.setItem(2, location2);
+    localStorage.setItem(3, location3);
+  }
+
+);
 
 var main = new UI.Window();
 
@@ -157,18 +174,18 @@ main.on('longClick', 'select', function(e) {
 });
 
 main.on('click', function(e) {
+  var location1 = localStorage.getItem(1);
+  var location2 = localStorage.getItem(2);
+  var location3 = localStorage.getItem(3);
   if (e.button === 'up') {
-    console.log('up click, New York');
-    var cityName = 'New York';
-    var URL = 'http://api.openweathermap.org/data/2.5/weather?q=New_York';
+    console.log('up click, ' + location1);
+    var URL = 'http://api.openweathermap.org/data/2.5/weather?q=' + encodeURIComponent(location1);
   } else if (e.button === 'select') {
-    console.log('select click, London');
-    var cityName = 'London';
-    var URL = 'http://api.openweathermap.org/data/2.5/weather?q=London';
+    console.log('select click, ' + location2);
+    var URL = 'http://api.openweathermap.org/data/2.5/weather?q=' + encodeURIComponent(location2);
   } else if (e.button === 'down') {
-    console.log('down click, Sydney');
-    var cityName = 'Sydney';
-    var URL = 'http://api.openweathermap.org/data/2.5/weather?lat=-33.85&lon=151.21';
+    console.log('down click, ' + location3);
+    var URL = 'http://api.openweathermap.org/data/2.5/weather?q=' + encodeURIComponent(location3);
   }
     ajax(
           {
@@ -184,6 +201,7 @@ main.on('click', function(e) {
             var c = Math.round(data.main.temp-273);
             var humid = data.main.humidity + '% humidity.';
             var desc1 = data.weather[0].description;
+            var cityName = data.name;
             var Menu = new UI.Menu({
             sections: [{
               title: cityName,
