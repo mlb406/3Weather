@@ -6,21 +6,33 @@
       input[type="text"] {
         padding: 10px;
         border: none;
-        border-bottom: solid 2px #c9c9c9;
+        border-bottom: solid 4px #c9c9c9;
         transition: box-shadow 0.3s, border 0.3s;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      h1 {
+        text-align: center;
+        font: 30px impact, sans-serif;
       }
       
       p {
-        font: 15px charcoal, sans-serif;
+        text-align: center;
+        font: 15px Charcoal, sans-serif;
       }
       
       body {
-        background-color: #A6A6A6;
+        background-color: #E4E4E4;
       }
       
       .subButton {
         font: 15px charcoal, sans-serif;
         color: #D6D6D6;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
       
       .subButton:hover {
@@ -36,6 +48,7 @@
   </head>
   <body>
     <!--HTML body goes here-->
+    <h1>3Weather settings</h1>
     <p>Enter first location (up click):</p>
     <input type="text" id="loc1" value="New York" onfocus="if(this.value != 'New York' || '' || ' ') { this.value = ''; }">
     <p>Enter second location (middle click):</p>
