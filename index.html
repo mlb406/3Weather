@@ -1,6 +1,60 @@
 <!DOCTYPE html>
 <html>
-<body>
-<p>Test</p>
-</body>
+  <head>
+    <style>
+      /*CSS styles go here*/
+      .subButton {
+        background: #ffffff;
+        background-image: -webkit-linear-gradient(top, #ffffff, #e8e8e8);
+        background-image: -moz-linear-gradient(top, #ffffff, #e8e8e8);
+        background-image: -ms-linear-gradient(top, #ffffff, #e8e8e8);
+        background-image: -o-linear-gradient(top, #ffffff, #e8e8e8);
+        background-image: linear-gradient(to bottom, #ffffff, #e8e8e8);
+        -webkit-border-radius: 15;
+        -moz-border-radius: 15;
+        border-radius: 15px;
+        text-shadow: 0px 1px 3px #666666;
+        font-family: Arial;
+        color: #000000;
+        font-size: 17px;
+        padding: 10px 10px 10px 10px;
+        border: solid #bababa 1px;
+        text-decoration: none;
+      }
+
+      .subButton:hover {
+        background: #fafafa;
+        background-image: -webkit-linear-gradient(top, #fafafa, #dbdbdb);
+        background-image: -moz-linear-gradient(top, #fafafa, #dbdbdb);
+        background-image: -ms-linear-gradient(top, #fafafa, #dbdbdb);
+        background-image: -o-linear-gradient(top, #fafafa, #dbdbdb);
+        background-image: linear-gradient(to bottom, #fafafa, #dbdbdb);
+        text-decoration: none;
+      }
+      
+      input[type="text"] {
+        padding: 10px;
+        border: none;
+        border-bottom: solid 2px #c9c9c9;
+        transition: box-shadow 0.3s, border 0.3s;
+      }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      //jQuery script to get settings goes here
+      
+    </script>
+  </head>
+  <body>
+    <!--HTML body goes here-->
+    <p>Enter first location (up click):</p>
+    <input type="text" id="loc1" value="New York" onfocus="if(this.value != 'New York' || '' || ' ') { this.value = ''; }">
+    <p>Enter second location (middle click):</p>
+    <input type="text" id="loc2" value="London" onfocus="(if(this.value != 'London' || '' || ' ') { this.value = ''; }">
+    <p>Enter third location (down click):</p>
+    <input type="text" id="loc3" value="Sydney" onfocus="(if(this.value != 'Sydney' || '' || ' ') { this.value = ''; }">
+    <br>
+    <button class="subButton" id="subButton">Submit</button>
+  </body>
 </html>
