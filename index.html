@@ -45,7 +45,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
       //jQuery script to get settings goes here
-      
+      $(function() {
+        $("#subButton").click(function() {
+          var loc1 = document.getElementById("loc1").value;
+          var loc2 = document.getElementById("loc2").value;
+          var loc3 = document.getElementById("loc3").value;
+          var options = { location1: loc1, location2: loc2, location3: loc3 };
+          document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
+        });
+      });
     </script>
   </head>
   <body>
