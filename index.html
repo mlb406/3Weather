@@ -8,10 +8,14 @@
         border: none;
         border-bottom: solid 4px #c9c9c9;
         transition: border 0.3s;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
       
       h1 {
         font: 30px impact, sans-serif;
+        text-align: center;
       }
       
       p.instruct {
@@ -21,6 +25,7 @@
       
       p {
         font: 15px trebuchet ms, sans-serif;
+        text-align: center;
       }
       
       body {
@@ -32,6 +37,9 @@
         background-color: #D6D6D6;
         color: #2E2E2E;
         border-radius: 5px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
       }
       
       .subButton:hover {
@@ -56,13 +64,13 @@
   <body>
     <!--HTML body goes here-->
     <h1>3Weather settings</h1>
-    <p class="instruct">To add further accuracy, add ",[xx]" where [xx] equals the country code.</p>
+    <p class="instruct">To add further accuracy, add a comma and the country code..</p>
     <p>Enter first location (up click):</p>
-    <input type="text" id="loc1" value="New York" onfocus="if(this.value != 'New York' || '' || ' ') { this.value = ''; }">
+    <input type="text" id="loc1" value="New York" onfocus="if(this.value != 'New York, US' || '' || ' ') { this.value = ''; }">
     <p>Enter second location (middle click):</p>
-    <input type="text" id="loc2" value="London" onfocus="if(this.value != 'London' || '' || ' ') { this.value = ''; }">
+    <input type="text" id="loc2" value="London" onfocus="if(this.value != 'London, GB' || '' || ' ') { this.value = ''; }">
     <p>Enter third location (down click):</p>
-    <input type="text" id="loc3" value="Sydney" onfocus="if(this.value != 'Sydney' || '' || ' ') { this.value = ''; }">
+    <input type="text" id="loc3" value="Sydney" onfocus="if(this.value != 'Sydney, AU' || '' || ' ') { this.value = ''; }">
     <br>
     <br />
     <button class="subButton" id="subButton">Submit</button>
