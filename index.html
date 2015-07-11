@@ -13,7 +13,7 @@
         margin-right: auto;
       }
       
-      input[type="radio"] {
+      .windUnits {
         font: 15px trebuchet ms, sans-serif;
       }
       
@@ -88,10 +88,12 @@
     <br>
     <h2>Units</h2>
     <p>Wind speed:</p>
+    <div class="windUnits">
     <input type="radio" id="unitWind1" name="unitWind" value="kmh">KPH
     <input type="radio" id="unitWind2" name="unitWind" value="mph" checked="checked">MPH
     <input type="radio" id="unitWind3" name="unitWind" value="kts">KTS
-    <br />
+    </div>
+    <br>
     <button class="subButton" id="subButton">Submit</button>
   </body>
 </html>
