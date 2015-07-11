@@ -16,6 +16,12 @@
       .windUnits {
         font: 15px trebuchet ms, sans-serif;
       }
+      .presUnits {
+        font: 15px trebuchet ms, sans-serif;
+      }
+      .tempUnits {
+        font: 15px trebuchet ms, sans-serif;
+      }
       
       h1 {
         font: 30px impact, sans-serif;
@@ -89,9 +95,21 @@
     <h2>Units</h2>
     <p>Wind speed:</p>
     <div class="windUnits">
-    <input type="radio" id="unitWind1" name="unitWind" value="kmh">KPH
-    <input type="radio" id="unitWind2" name="unitWind" value="mph" checked="checked">MPH
-    <input type="radio" id="unitWind3" name="unitWind" value="kts">KTS
+      <input type="radio" id="unitWind1" name="unitWind" value="kmh">KPH
+      <input type="radio" id="unitWind2" name="unitWind" value="mph" checked="checked">MPH
+      <input type="radio" id="unitWind3" name="unitWind" value="kts">KTS
+    </div>
+    <br>
+    <p>Pressure:</p>
+    <div class="presUnits">
+      <input type="radio" id="unitPres1" name="unitPres" value="hPa">hPa/MB
+      <input type="radio" id="unitPres2" name="unitPres" value="inHg">inHg
+    </div>
+    <br>
+    <p>Temperature:</p>
+    <div class="tempUnits">
+      <input type="radio" id="unitTemp1" name="unitTemp" value="c">°C
+      <input type="radio" id="unitTemp2" name="unitTemp" value="f">°F
     </div>
     <br>
     <button class="subButton" id="subButton">Submit</button>
