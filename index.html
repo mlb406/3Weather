@@ -74,8 +74,12 @@
           var loc1 = document.getElementById("loc1").value;
           var loc2 = document.getElementById("loc2").value;
           var loc3 = document.getElementById("loc3").value;
-          var options = { location1: loc1, location2: loc2, location3: loc3 };
-          document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
+          var winUnit = $("input[type='radio'][name='unitWind']:checked").val();
+          var preUnit = $("input[type='radio'][name='unitPres']:checked").val();
+          var temUnit = $("input[type='radio'][name='unitTemp']:checked").val();
+          var options = { location1: loc1, location2: loc2, location3: loc3, units: { wind: winUnit, pressure: preUnit, temp: temUnit } };
+          console.log(JSON.stringify(options));
+          //document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
         });
       });
     </script>
