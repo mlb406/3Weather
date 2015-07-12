@@ -30,6 +30,21 @@
                 "type": "font"
             },
             {
+                "file": "images/icon_speed.png",
+                "name": "IMAGES_ICON_SPEED_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/icon_thermo.png",
+                "name": "IMAGES_ICON_THERMO_PNG",
+                "type": "png"
+            },
+            {
+                "file": "images/icon_cloud.png",
+                "name": "IMAGES_ICON_CLOUD_PNG",
+                "type": "png"
+            },
+            {
                 "file": "images/weatherdither.png",
                 "menuIcon": true,
                 "name": "IMAGES_WEATHERDITHER_PNG",
