@@ -30,21 +30,6 @@
                 "type": "font"
             },
             {
-                "file": "images/icon_speed.png",
-                "name": "IMAGES_ICON_SPEED_PNG",
-                "type": "png"
-            },
-            {
-                "file": "images/icon_thermo.png",
-                "name": "IMAGES_ICON_THERMO_PNG",
-                "type": "png"
-            },
-            {
-                "file": "images/icon_cloud.png",
-                "name": "IMAGES_ICON_CLOUD_PNG",
-                "type": "png"
-            },
-            {
                 "file": "images/weatherdither.png",
                 "menuIcon": true,
                 "name": "IMAGES_WEATHERDITHER_PNG",
@@ -56,7 +41,7 @@
     "shortName": "3Weather",
     "uuid": "3fd9c34d-cc14-4039-adfa-9bea4f636a52",
     "versionCode": 1,
-    "versionLabel": "1.51",
+    "versionLabel": "2.0",
     "watchapp": {
         "watchface": false
     }
