@@ -9,4 +9,6 @@ This app is written wholey in JavaScript, using the Pebble.JS framework.
 
 Feel free to try and improve this app if you want to.
 
+This app is now in version 2.0.
+
 Max
