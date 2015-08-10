@@ -77,7 +77,8 @@
           var winUnit = $("input[type='radio'][name='unitWind']:checked").val();
           var preUnit = $("input[type='radio'][name='unitPres']:checked").val();
           var temUnit = $("input[type='radio'][name='unitTemp']:checked").val();
-          var options = { location1: loc1, location2: loc2, location3: loc3, units: { wind: winUnit, pressure: preUnit, temp: temUnit } };
+          var wakeup = $("input[type='radio'][name='wakeup']:checked").val()
+          var options = { location1: loc1, location2: loc2, location3: loc3, units: { wind: winUnit, pressure: preUnit, temp: temUnit }, wakeup: wakeup };
           
           document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
         });
@@ -114,6 +115,13 @@
     <div class="tempUnits">
       <input type="radio" id="unitTemp1" name="unitTemp" value="c" checked>°C
       <input type="radio" id="unitTemp2" name="unitTemp" value="f">°F
+    </div>
+    <br>
+    <h2>Wakeup</h2>
+    <p>This enables a daily wakeup, asking if you have checked the weather today.</p>
+    <div class="wakeupUnits">
+      <input type="radio" id="wakeupON" name="wakeup" value="true" checked>On
+      <input type="radio" id="wakeupOFF" name="wakeup" value="false"> Off
     </div>
     <br>
     <button class="subButton" id="subButton">Submit</button>
