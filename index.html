@@ -70,16 +70,35 @@
     <script>
       //jQuery script to get settings goes here
       $(function() {
+        try {
+          var ps = localStorage.getItem(1);
+          $("loc1").val(ps[0]);
+          $("loc2").val(ps[1]);
+          $("loc3").val(ps[2]);
+          $("#" + ps[3]).checked();
+          $("#" + ps[4]).checked();
+        } catch(err) {
+          console.log(err.message);
+        }
         $("#subButton").click(function() {
-          var loc1 = document.getElementById("loc1").value;
-          var loc2 = document.getElementById("loc2").value;
-          var loc3 = document.getElementById("loc3").value;
-          var winUnit = $("input[type='radio'][name='unitWind']:checked").val();
-          var preUnit = $("input[type='radio'][name='unitPres']:checked").val();
-          var temUnit = $("input[type='radio'][name='unitTemp']:checked").val();
-          var wakeup = $("input[type='radio'][name='wakeup']:checked").val()
-          var options = { location1: loc1, location2: loc2, location3: loc3, units: { wind: winUnit, pressure: preUnit, temp: temUnit }, wakeup: wakeup };
+          var persistSettings = new Array();
           
+          var loc1 = document.getElementById("loc1").value;
+          persistSettings[persistSettings.length] = loc1;
+          var loc2 = document.getElementById("loc2").value;
+          persistSettings[persistSettings.length] = loc2;
+          var loc3 = document.getElementById("loc3").value;
+          persistSettings[persistSettings.length] = loc3;
+          var winUnit = $("input[type='radio'][name='unitWind']:checked").val();
+          persistSettings[persistSettings.length] = winUnit;
+          var preUnit = $("input[type='radio'][name='unitPres']:checked").val();
+          persistSettings[persistSettings.length] = preUnit;
+          var temUnit = $("input[type='radio'][name='unitTemp']:checked").val();
+          persistSettings[persistSettings.length] = temUnit;
+          var wakeup = $("input[type='radio'][name='wakeup']:checked").val();
+          persistSettings[persistSettings.length] = wakeup;
+          var options = { location1: loc1, location2: loc2, location3: loc3, units: { wind: winUnit, pressure: preUnit, temp: temUnit }, wakeup: wakeup };
+          localStorage.setItem(1, persistSettings);
           document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
         });
       });
