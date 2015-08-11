@@ -22,6 +22,9 @@
       .tempUnits {
         font: 15px trebuchet ms, sans-serif;
       }
+      .wakeup {
+        font: 15px trebuchet ms, sans-serif;
+      }
       
       h1 {
         font: 30px impact, sans-serif;
@@ -75,8 +78,11 @@
           $("loc1").val(ps[0]);
           $("loc2").val(ps[1]);
           $("loc3").val(ps[2]);
-          $("#" + ps[3]).checked();
-          $("#" + ps[4]).checked();
+          $("input[name='unitWind'][value=" + ps[3] + "]").prop(checked, true);
+          $("input[name='unitPres'][value=" + ps[4] + "]").prop(checked, true);
+          $("input[name='unitTemp'][value=" + ps[5] + "]").prop(checked, true);
+          $("input[name='wakeup'][value=" + ps[6] + "]").prop(checked, true);
+          
         } catch(err) {
           console.log(err.message);
         }
@@ -137,7 +143,7 @@
     </div>
     <br>
     <h2>Wakeup</h2>
-    <p>This enables a daily wakeup, asking if you have checked the weather today.</p>
+    <p>This enables a daily wakeup, asking if you have checked the weather today.<br>Will be enabled in the next update.</p>
     <div class="wakeupUnits">
       <input type="radio" id="wakeupON" name="wakeup" value="true" checked>On
       <input type="radio" id="wakeupOFF" name="wakeup" value="false"> Off
