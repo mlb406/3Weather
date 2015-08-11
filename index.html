@@ -78,10 +78,10 @@
           $("loc1").val(ps[0]);
           $("loc2").val(ps[1]);
           $("loc3").val(ps[2]);
-          $("input[name='unitWind'][value='" + ps[3] + "']").prop(checked, true);
-          $("input[name='unitPres'][value='" + ps[4] + "']").prop(checked, true);
-          $("input[name='unitTemp'][value='" + ps[5] + "']").prop(checked, true);
-          $("input[name='wakeup'][value='" + ps[6] + "']").prop(checked, true);
+          $("input[name='unitWind'][value='" + ps[3] + "']").prop("checked", true);
+          $("input[name='unitPres'][value='" + ps[4] + "']").prop("checked", true);
+          $("input[name='unitTemp'][value='" + ps[5] + "']").prop("checked", true);
+          $("input[name='wakeup'][value='" + ps[6] + "']").prop("checked", true);
           
         } catch(err) {
           console.log(err.message);
