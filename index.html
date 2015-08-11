@@ -75,9 +75,9 @@
       $(function() {
         try {
           var ps = JSON.parse(localStorage.getItem(1));
-          $("loc1").val(ps.location1);
-          $("loc2").val(ps.location2);
-          $("loc3").val(ps.location3);
+          $("#loc1").val(ps.location1);
+          $("#loc2").val(ps.location2);
+          $("#loc3").val(ps.location3);
           $("input[name='unitWind'][value='" + ps.units.wind + "']").prop("checked", true);
           $("input[name='unitPres'][value='" + ps.units.pressure + "']").prop("checked", true);
           $("input[name='unitTemp'][value='" + ps.units.temp + "']").prop("checked", true);
