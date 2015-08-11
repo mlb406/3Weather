@@ -74,14 +74,14 @@
       //jQuery script to get settings goes here
       $(function() {
         try {
-          var ps = localStorage.getItem(1);
-          $("loc1").val(ps[0]);
-          $("loc2").val(ps[1]);
-          $("loc3").val(ps[2]);
-          $("input[name='unitWind'][value='" + ps[3] + "']").prop("checked", true);
-          $("input[name='unitPres'][value='" + ps[4] + "']").prop("checked", true);
-          $("input[name='unitTemp'][value='" + ps[5] + "']").prop("checked", true);
-          $("input[name='wakeup'][value='" + ps[6] + "']").prop("checked", true);
+          var ps = JSON.parse(localStorage.getItem(1));
+          $("loc1").val(ps.location1);
+          $("loc2").val(ps.location2);
+          $("loc3").val(ps.location3);
+          $("input[name='unitWind'][value='" + ps.units.wind + "']").prop("checked", true);
+          $("input[name='unitPres'][value='" + ps.units.pressure + "']").prop("checked", true);
+          $("input[name='unitTemp'][value='" + ps.units.temp + "']").prop("checked", true);
+          $("input[name='wakeup'][value='" + ps.wakeup + "']").prop("checked", true);
           
         } catch(err) {
           console.log(err.message);
@@ -103,7 +103,8 @@
           var wakeup = $("input[type='radio'][name='wakeup']:checked").val();
           persistSettings[persistSettings.length] = wakeup;
           var options = { location1: loc1, location2: loc2, location3: loc3, units: { wind: winUnit, pressure: preUnit, temp: temUnit }, wakeup: wakeup };
-          localStorage.setItem(1, persistSettings);
+          settingsToStore = JSON.stringify(options);
+          localStorage.setItem(1, settingsToStore);
           document.location = "pebblejs://close#" + encodeURIComponent(JSON.stringify(options));
         });
       });
